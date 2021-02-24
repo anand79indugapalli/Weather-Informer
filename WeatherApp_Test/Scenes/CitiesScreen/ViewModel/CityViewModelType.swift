@@ -6,3 +6,15 @@
 //
 
 import Foundation
+protocol CityViewModelType {
+    func getCityForecastInfoFromServer(units: String, completionHandler: @escaping ( _ list: CityWeatherForecast?, _ errorMsg: String) -> Void)
+    func goToHomeScreen()
+}
+
+protocol CityCoordinatorType {
+    func goToHomeScreen()
+}
+
+protocol CityTableHeaderType {
+    func dateSelected(index: Int)
+}

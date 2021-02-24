@@ -1,7 +1,119 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2GE-eF-LOR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Map ScreenVC-->
+        <scene sceneID="pYu-6V-4Eb">
+            <objects>
+                <viewController id="2GE-eF-LOR" customClass="MapScreenVC" customModule="WeatherApp_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zTX-Wb-myj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="GRO-XQ-4Gx">
+                                <rect key="frame" x="0.0" y="148" width="414" height="586"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BookMark Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYu-00-bOB">
+                                <rect key="frame" x="120.5" y="64" width="173.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x7a-MX-2DL">
+                                <rect key="frame" x="0.0" y="734" width="414" height="128"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="t3N-bu-Kaj">
+                                        <rect key="frame" x="16" y="78" width="382" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1l-hi-a9E">
+                                                <rect key="frame" x="0.0" y="0.0" width="183" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancelButtonTapped:" destination="2GE-eF-LOR" eventType="touchUpInside" id="Nt4-6T-fEn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfe-Fe-Z69">
+                                                <rect key="frame" x="199" y="0.0" width="183" height="50"/>
+                                                <color key="backgroundColor" red="0.081761546429999998" green="0.57816165689999999" blue="0.57243108750000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="BookMark"/>
+                                                <connections>
+                                                    <action selector="confirmButtonTapped:" destination="2GE-eF-LOR" eventType="touchUpInside" id="PpL-JQ-tnF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Gzb-Xo-MPv"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select location on map." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6t-zA-tSf">
+                                        <rect key="frame" x="16" y="16" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="EJd-Sa-uJB"/>
+                                    <constraint firstAttribute="bottom" secondItem="t3N-bu-Kaj" secondAttribute="bottom" id="MwT-xw-6tV"/>
+                                    <constraint firstAttribute="trailing" secondItem="t3N-bu-Kaj" secondAttribute="trailing" constant="16" id="XMB-aG-E7E"/>
+                                    <constraint firstItem="V6t-zA-tSf" firstAttribute="top" secondItem="x7a-MX-2DL" secondAttribute="top" constant="16" id="gPD-vB-Kol"/>
+                                    <constraint firstItem="t3N-bu-Kaj" firstAttribute="leading" secondItem="x7a-MX-2DL" secondAttribute="leading" constant="16" id="kqa-9O-8fg"/>
+                                    <constraint firstAttribute="trailing" secondItem="V6t-zA-tSf" secondAttribute="trailing" constant="16" id="oux-t9-WrE"/>
+                                    <constraint firstItem="V6t-zA-tSf" firstAttribute="leading" secondItem="x7a-MX-2DL" secondAttribute="leading" constant="16" id="uKN-dI-TpF"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note: Long Press on map to select your required location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9w-t0-Yvp">
+                                <rect key="frame" x="16" y="104" width="382" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="84f-mP-kag"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GRO-XQ-4Gx" firstAttribute="leading" secondItem="84f-mP-kag" secondAttribute="leading" id="7DR-gc-9RF"/>
+                            <constraint firstItem="u9w-t0-Yvp" firstAttribute="leading" secondItem="84f-mP-kag" secondAttribute="leading" constant="16" id="9DA-QM-EIn"/>
+                            <constraint firstItem="u9w-t0-Yvp" firstAttribute="top" secondItem="uYu-00-bOB" secondAttribute="bottom" constant="16" id="CaC-tV-Hhh"/>
+                            <constraint firstItem="GRO-XQ-4Gx" firstAttribute="top" secondItem="u9w-t0-Yvp" secondAttribute="bottom" constant="8" id="Ftx-Oz-XkT"/>
+                            <constraint firstItem="84f-mP-kag" firstAttribute="trailing" secondItem="u9w-t0-Yvp" secondAttribute="trailing" constant="16" id="JVt-f4-twB"/>
+                            <constraint firstItem="84f-mP-kag" firstAttribute="trailing" secondItem="GRO-XQ-4Gx" secondAttribute="trailing" id="Kvw-0B-XtN"/>
+                            <constraint firstItem="84f-mP-kag" firstAttribute="bottom" secondItem="x7a-MX-2DL" secondAttribute="bottom" id="T1X-G9-cnq"/>
+                            <constraint firstItem="84f-mP-kag" firstAttribute="trailing" secondItem="x7a-MX-2DL" secondAttribute="trailing" id="U27-5i-IVA"/>
+                            <constraint firstItem="x7a-MX-2DL" firstAttribute="top" secondItem="GRO-XQ-4Gx" secondAttribute="bottom" id="VRp-K1-9b6"/>
+                            <constraint firstItem="uYu-00-bOB" firstAttribute="top" secondItem="84f-mP-kag" secondAttribute="top" constant="20" id="iGS-DF-77L"/>
+                            <constraint firstItem="x7a-MX-2DL" firstAttribute="leading" secondItem="84f-mP-kag" secondAttribute="leading" id="kMe-Dc-9oU"/>
+                            <constraint firstItem="uYu-00-bOB" firstAttribute="centerX" secondItem="84f-mP-kag" secondAttribute="centerX" id="yNl-XJ-XYi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="confirmButton" destination="jfe-Fe-Z69" id="KDp-Ka-QB5"/>
+                        <outlet property="mapDescLbl" destination="V6t-zA-tSf" id="V2J-2f-4iI"/>
+                        <outlet property="mapView" destination="GRO-XQ-4Gx" id="nLV-Rd-FTs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EbM-72-PKa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="79.710144927536234" y="58.928571428571423"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

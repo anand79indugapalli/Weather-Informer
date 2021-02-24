@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+struct BookMarkModel: Codable {
+    var city: String
+    var state: String
+    var country: String
+    var coordinates: Coordinates
+    var pinCode: String?
+}
+
+struct Coordinates: Codable {
+    
+    var latitude: Double
+    
+    var longitude: Double
+}
